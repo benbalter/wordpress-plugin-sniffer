@@ -1,0 +1,3 @@
+[submodule "tlc-transients"]
+	path = tlc-transients
+	url = https://github.com/markjaquith/WP-TLC-Transients.git

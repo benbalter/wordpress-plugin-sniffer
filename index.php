@@ -1,6 +1,8 @@
 <?php 
 include( 'class.plugin-sniffer.php' );
-$sniffer = new WP_Plugin_Sniffer();
+$home = ( isset( $_GET['home'] ) ) ? $_GET['home'] : null;
+$num = ( isset( $_GET['count'] ) ) ? $_GET['count'] : null;
+$sniffer = new WP_Plugin_Sniffer( $home, $num );
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +85,7 @@ $sniffer = new WP_Plugin_Sniffer();
       	<div class="span6 offset2">
       		<h3>Plugins</h3>
       		<ol>
-      		<?php foreach ( $sniffer->plugins as $plugin ) {?> 
+      		<?php foreach ( $sniffer->found as $plugin ) {?> 
       			<li><?php echo $plugin; ?></li>
       		<?Php } ?>
       		</ol>
